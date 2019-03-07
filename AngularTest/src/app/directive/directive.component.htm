@@ -1,0 +1,39 @@
+<h3>Directive Test...</h3>
+
+<div *ngIf="status">hello</div>
+<ng-template [ngIf]="status">
+  <div>world</div>
+</ng-template>
+<input type="checkbox" [(ngModel)]="status"/>
+
+<div *ngFor="let product of products; index as i; first as isFirst; last as isLast">
+  <li [ngClass]="{'first': isFirst, 'last': isLast}">
+    {{i}} - {{product.name}} - {{product.price}}
+  </li>  
+</div>
+<input type="text" [(ngModel)]="name"/> - 
+<input type="text" [(ngModel)]="price"/>
+<button (click)="addProduct()">add</button>
+
+<h3>Structure directive test....</h3>
+<!--
+  Structure directive 의 기본은 <ng-template> 에 등록해야
+    하는데 축약형이 * 이다..
+    <ng-template [aaa]="~~" bbb="~~"> 로 등록하면..
+      directive 의 값뿐만 아니라.. 다른 attr(bbb) 값 획득
+      가능..
+    <div *aaa="~~" bbb="~~"> 축약형으로 등록하면.. 다른
+      attr 값 획득 못한다..
+-->
+<ng-template [myDirective]="true" count="3">
+  <div>hello</div>
+</ng-template>
+<div *myDirective="true" count="2">
+  <div>world</div>
+</div>
+
+<h3>attribute directive test...</h3>
+<span myColor="red" (colorChangeEvt)="colorChange($event)">
+  this color is {{color}}
+</span>
+

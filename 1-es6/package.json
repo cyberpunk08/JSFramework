@@ -1,0 +1,16 @@
+{
+  "name": "es6-project",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "webpack main2.js -w "
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-stage-2": "^7.0.0",
+    "babel-loader": "8.0.5",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.1"
+  }
+}

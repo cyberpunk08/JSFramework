@@ -1,0 +1,31 @@
+<h3>Directive Test..</h3>
+
+<div *ngIf="status">hello</div>
+<ng-template [ngIf]="status">
+  <div>world</div>
+</ng-template>
+
+<input type="checkbox" [(ngModel)]="status"/>
+
+<div *ngFor="let product of products; index as i; first as isFirst; last as isLast">
+  <li [ngClass]="{'first' : isFirst, 'last' : isList}">
+    {{i}} - {{product.name}} - {{product.price}} 
+  </li>
+</div>
+
+<input type="text" [(ngModel)]="name"/>
+<input type="text" [(ngModel)]="price"/>
+<button (click)="addProduct()">add</button>
+
+<h3>Structure directive test...</h3>
+<ng-template [myDirective]="true" count="3">
+  <div>hello</div>
+</ng-template>
+<div *myDirective="true" count="2">
+  <div>world</div>
+</div>
+
+<h3>attribute dirctive test...</h3>
+<span myColor="red" (colorChangeEvt)="colorChage($event)">
+  this color is {{color}}
+</span>

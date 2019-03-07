@@ -1,0 +1,21 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<h1>HelloWorld!!</h1>
+<div>
+    <label>id : {{user.id}}</label>
+</div>
+<div>
+    <label>name : {{user.name}}</label>
+    <input [value]="user.name"/>
+</div>
+<div>
+    <label>phone : {{user.phone}}</label>
+    <input value="{{user.email}}"/>
+</div>
+<div>
+    <label>email : {{user.email}}</label>
+    <input [(ngModel)] = "user.email"/>
+</div>
+
+<app-sub></app-sub>
+
+<app-directive></app-directive>

@@ -1,0 +1,10 @@
+<h3>Injection test</h3>
+<ul>
+  <li *ngFor="let user of users">
+    <span>
+      {{user.id}} - {{user.name}} - {{user.phone}} - 
+      {{user.email}}
+    </span>
+  </li>
+</ul>
+<div class="error" *ngIf="error">{{error}}</div>

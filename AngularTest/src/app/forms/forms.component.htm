@@ -1,0 +1,49 @@
+<div class="container">
+  <div  [hidden]="submitted">
+    <h1>User Form</h1>
+    <!--add ...#userForm : 개발자가 주는 form 식별자..-->
+    <form (ngSubmit)="onsubmit()" #userForm="ngForm">
+        
+      <div class="form-group">
+        <label for="name">Name</label>
+        <!--add -->
+        <input type="text" name="name" required 
+          [(ngModel)]="model.name" #name="ngModel"/>
+        <div [hidden]="name.valid || name.pristine">
+          name is required.....
+        </div>
+      </div>
+        
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <!--add -->
+        <input type="text" name="phone" 
+          [(ngModel)]="model.phone"/>
+      </div>
+        
+      <div class="form-group">
+        <label for="address">Address</label>
+        <!--add -->
+        <select name="address" required 
+          [(ngModel)]="model.address" #address="ngModel">
+          <option *ngFor="let addr of addresses"
+            [value]="addr">{{addr}}</option>
+        </select>
+        <div [hidden]="address.valid || address.pristine">
+            address is required.....
+          </div>
+      </div>
+      <!--add -->
+      <button type="submit" 
+        [disabled]="!userForm.form.valid">submit</button>
+        
+    </form>
+  </div>
+    
+  <div [hidden]="!submitted">
+    <h2>You submitted the following:</h2>
+    <!--add-->
+    
+  </div>
+</div>
+
