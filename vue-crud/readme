@@ -1,0 +1,55 @@
+디렉토리 복사
+
+>npm install
+
+
+///////////test1... router................
+main.js
+App.vue 에 <router-view></router-view> 추가
+
+ListComponent.vue 만 출력되는거 확인
+
+//포트번호 바꾸어 테스트....
+> npm run serve -- --port 8088
+
+///////////test2.... vuex .....ListComponent vuex 적용해서 서버 데이터 출력확인..............
+store/modules/list.js
+store/index.js
+
+ListComponent.vue
+
+main.js
+
+
+///////////////////test3... add..........................
+store/modules/list.js
+ListComponent.vue
+EditComponent.vue
+
+add 해서 목록에 데이터 나오는 것 까지 확인
+
+
+////////////////test4... update...................
+store/modules/list.js
+
+ListComponent.vue
+EditComponent.vue
+
+
+////////////////test5..... delete...............
+store/modules/list.js
+
+ListComponent.vue
+
+
+//////////////// 전체 테스트...
+store/modules/list.js
+store/list.js
+
+components/ListComponent.vue
+components/EditComponent.vue
+
+App.vue
+
+index.js
+
